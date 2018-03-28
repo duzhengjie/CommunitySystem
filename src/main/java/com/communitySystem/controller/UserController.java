@@ -18,9 +18,9 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping("/showUser.do")
-    public Map<String,User> selectUser(Map<String,User> m,@RequestParam(required = false) long id){
+    public Map<String, User> selectUser(Map<String,User> m,@RequestParam(required = false) long id){
         User user = userService.selectUser(id);
-        m.put("Users",user);
+        m.put("data",user);
         System.out.println(user);
         return m;
     }
