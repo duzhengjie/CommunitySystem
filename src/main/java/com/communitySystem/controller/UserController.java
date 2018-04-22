@@ -78,7 +78,7 @@ public class UserController {
         Map<String,String> m = new HashMap<>();
         Residents resident = (Residents) session.getAttribute("cgPswResident");
         long id = resident.getId();
-        System.out.println("id:"+id);
+//        System.out.println("id:"+id);
         if(userService.changePsw(id,password)){
             m.put("changePsw","success");
         }

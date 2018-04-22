@@ -7,8 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03e9f325-9e18-4c4b-9e5a-ba01e3eb8e01" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../CommunitySystem/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../CommunitySystem/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/../CommunitySystem/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../CommunitySystem/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../CommunitySystem/src/main/java/com/communitySystem/controller/UserController.java" afterPath="$PROJECT_DIR$/../CommunitySystem/src/main/java/com/communitySystem/controller/UserController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../CommunitySystem/src/main/java/com/communitySystem/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1950">
-              <caret line="77" column="47" lean-forward="false" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="47" />
+            <state relative-caret-position="433">
+              <caret line="83" column="9" lean-forward="true" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,7 +127,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vcs.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="vcs.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../CommunitySystem/.idea/vcs.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -188,7 +188,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/communitySystem/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/communitySystem/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/communitySystem/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/login.jsp" />
@@ -239,6 +238,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/css/bootstrap/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/resident/common/navigationbar.jsp" />
         <option value="$PROJECT_DIR$/../CommunitySystem/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/../CommunitySystem/src/main/java/com/communitySystem/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -890,7 +890,7 @@
       <workItem from="1524236294803" duration="2343000" />
       <workItem from="1524291815976" duration="5596000" />
       <workItem from="1524374737114" duration="776000" />
-      <workItem from="1524380669139" duration="1631000" />
+      <workItem from="1524380669139" duration="2141000" />
     </task>
     <task id="LOCAL-00001" summary="毕设">
       <created>1521465273376</created>
@@ -948,7 +948,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524382304477</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="change1">
+      <created>1524382593030</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1524382593030</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -978,7 +985,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150805000" />
+    <option name="totallyTimeSpent" value="151315000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1371,16 +1378,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../CommunitySystem/src/main/java/com/communitySystem/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1950">
-          <caret line="77" column="47" lean-forward="false" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/phrase.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1979">
@@ -1433,6 +1430,16 @@
         <state relative-caret-position="150">
           <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CommunitySystem/src/main/java/com/communitySystem/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="83" column="9" lean-forward="true" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
