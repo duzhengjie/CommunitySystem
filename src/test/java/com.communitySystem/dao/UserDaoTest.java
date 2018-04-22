@@ -1,5 +1,6 @@
 package com.communitySystem.dao;
 
+import com.communitySystem.model.Residents;
 import com.communitySystem.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +18,7 @@ public class UserDaoTest {
     @Test
     public void testSelectUser() throws Exception{
         long id=1;
-        User user = userDao.selectUser(id);
-        System.out.println(user.getUsername());
+        Residents resident = userDao.selectResidentUser(id);
+        System.out.println(resident.getName());
     }
 }

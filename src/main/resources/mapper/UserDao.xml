@@ -4,8 +4,19 @@
 <!-- 设置为IUserDao接口方法提供sql语句配置 -->
 <mapper namespace="com.communitySystem.dao.UserDao">
 
-    <select id="selectUser" resultType="User" parameterType="long">
-        SELECT * FROM user WHERE id = #{id}
+    <select id="checkUser" resultType="User" parameterType="User">
+        SELECT * FROM user WHERE userName=#{userName} and password=#{password}
     </select>
 
+    <select id="selectResidentUser" resultType="Residents" parameterType="long">
+        SELECT * FROM residents WHERE id = #{id}
+    </select>
+
+    <select id="checkResidentUser" resultType="Residents" parameterType="FgPsdUser">
+        SELECT * FROM residents WHERE name = #{name} and identity = #{identity} and tel = #{tel}
+    </select>
+
+    <update id="changePsw">
+        UPDATE user SET password = #{arg1} WHERE id = #{arg0}
+    </update>
 </mapper>

@@ -1,31 +1,29 @@
 package com.communitySystem.model;
 
 import java.util.Date;
-
+/*
+用户表 字段(id,userName,password,role)
+ */
 public class User {
-    private long id;
-    private String email;
-    private String password;
-    private String username;
-    private String role;
-    private int status;
-    private Date regTime;
-    private String regIp;
+   private long id;
+   private String userName;
+   private String password;
+   private String role;
 
     public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -36,14 +34,6 @@ public class User {
         this.password = password;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getRole() {
         return role;
     }
@@ -52,41 +42,13 @@ public class User {
         this.role = role;
     }
 
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public Date getRegTime() {
-        return regTime;
-    }
-
-    public void setRegTime(Date regTime) {
-        this.regTime = regTime;
-    }
-
-    public String getRegIp() {
-        return regIp;
-    }
-
-    public void setRegIp(String regIp) {
-        this.regIp = regIp;
-    }
-
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", username='" + username + '\'' +
-                ", role='" + role + '\'' +
-                ", status=" + status +
-                ", regTime=" + regTime +
-                ", regIp='" + regIp + '\'' +
+                "用户id:" + id +
+                ", 用户名：'" + userName + '\'' +
+                ", 密码：'" + password + '\'' +
+                ", 扮演角色：'" + role + '\'' +
                 '}';
     }
 }
