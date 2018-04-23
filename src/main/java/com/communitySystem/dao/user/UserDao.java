@@ -1,4 +1,4 @@
-package com.communitySystem.dao;
+package com.communitySystem.dao.user;
 
 import com.communitySystem.model.FgPsdUser;
 import com.communitySystem.model.Residents;
