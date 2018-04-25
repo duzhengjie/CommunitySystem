@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 设置为IUserDao接口方法提供sql语句配置 -->
+<mapper namespace="com.communitySystem.dao.topic.TopicDao">
+    <resultMap id="topicTypeList" type="com.communitySystem.model.topic.Topic">
+
+    </resultMap>
+
+    <insert id="insertTopic" parameterType="Topic">
+        INSERT * INTO topic VALUE (#{topicId},#{topicName},#{topicContent},#{topicAnnouncer},
+        #{AnnounceTime},#{viewCount},#{topicPraiseNum},#{praiserName},#{topicType})
+    </insert>
+
+    <select id="queryByTopicType" resultMap="topicTypeList">
+        SELECT * FROM comment WHERE TopicType = #{TopicType} DESC BY #{AnnounceTime} ;
+    </select>
+</mapper>

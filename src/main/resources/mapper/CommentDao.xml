@@ -5,8 +5,19 @@
 <mapper namespace="com.communitySystem.dao.topic.CommentDao">
 
     <insert id="insertComment" parameterType="Comment">
-        INSERT * INTO comment VALUE (#{commentId},#{commentContent},#{commentBy},
-        #{replyBy},#{commentTime},#{commnetPraiseNum})
+        INSERT * INTO comment VALUE (#{topicId},#{commentId},#{commentContent},#{commentBy},
+        #{replyBy},#{commentTime},#{commentPraiseNum})
     </insert>
 
+    <delete id="deleteByCommentBy" parameterType="String">
+        DELETE * FROM comment WHERE commentBy = #{commentBy};
+    </delete>
+
+    <delete id="deleteByReplyByAndCommentBy" parameterType="String">
+        DELETE * FROM comment WHERE replyBy = #{replyBy} and commentBy = #{commentBy};
+    </delete>
+
+    <select id="queryByCommentId" resultType="Comment">
+        SELECT * FROM comment WHERE commentId = #{commentId};
+    </select>
 </mapper>

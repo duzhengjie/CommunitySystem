@@ -8,6 +8,10 @@ import java.util.Date;
 public class Comment
 {
     /**
+     * 该评论对应话题ID
+     */
+    private String topicId;
+    /**
      * 评论对应ID
      */
     private String commentId;
@@ -30,7 +34,15 @@ public class Comment
     /**
      * 评论被点赞数（不显示点赞人）
      */
-    private int commnetPraiseNum;
+    private int commentPraiseNum;
+
+    public String getTopicId() {
+        return topicId;
+    }
+
+    public void setTopicId(String topicId) {
+        this.topicId = topicId;
+    }
 
     public String getCommentId() {
         return commentId;
@@ -72,11 +84,11 @@ public class Comment
         this.commentTime = commentTime;
     }
 
-    public int getCommnetPraiseNum() {
-        return commnetPraiseNum;
+    public int getCommentPraiseNum() {
+        return commentPraiseNum;
     }
 
-    public void setCommnetPraiseNum(int commnetPraiseNum) {
-        this.commnetPraiseNum = commnetPraiseNum;
+    public void setCommentPraiseNum(int commnetPraiseNum) {
+        this.commentPraiseNum = commnetPraiseNum;
     }
 }

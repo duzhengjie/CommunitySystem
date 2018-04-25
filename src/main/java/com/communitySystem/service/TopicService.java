@@ -1,4 +1,12 @@
 package com.communitySystem.service;
 
-public interface TopicService {
+import com.communitySystem.model.topic.Topic;
+
+import java.util.List;
+
+public interface TopicService
+{
+    boolean insertTopic(Topic topic);
+
+    List<Topic> queryByTopicType(String topicType);
 }

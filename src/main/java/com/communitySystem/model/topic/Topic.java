@@ -45,10 +45,6 @@ public class Topic
      * 话题类别
      */
     private String topicType;
-    /**
-     * 该话题对应的评论列表
-     */
-    private List<Comment> commentList;
 
     public String getTopicId() {
         return topicId;
@@ -122,11 +118,4 @@ public class Topic
         this.topicType = topicType;
     }
 
-    public List<Comment> getCommentList() {
-        return commentList;
-    }
-
-    public void setCommentList(List<Comment> commentList) {
-        this.commentList = commentList;
-    }
 }

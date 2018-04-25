@@ -14,7 +14,27 @@ public class CommentDaoImpl implements CommentService
     private  CommentDao commentDao;
 
     @Override
-    public boolean insertComment(Comment comment) {
+    public boolean insertComment(Comment comment)
+    {
         return commentDao.insertComment(comment);
     }
+
+    @Override
+    public boolean deleteByCommentBy(String commentBy)
+    {
+        return commentDao.deleteByCommentBy(commentBy);
+    }
+
+    @Override
+    public boolean deleteByReplyByAndCommentBy(String replyBy, String commentBy)
+    {
+        return commentDao.deleteByReplyByAndCommentBy(replyBy, commentBy);
+    }
+
+    @Override
+    public Comment queryByCommentId(String commentId) {
+        return commentDao.queryByCommentId(commentId);
+    }
+
+
 }
