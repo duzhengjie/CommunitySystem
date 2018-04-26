@@ -28,7 +28,7 @@ public class UserController {
         System.out.println("password:"+user.getPassword());
         User dbUser = userService.checkUser(user);
         if(dbUser != null){
-            if(dbUser.getRole().equals("住户"))
+            if(dbUser.getRole().equals("resident"))
             {
                 Residents resident = userService.selectResidentUser(dbUser.getId());
                 session.setAttribute("currentLoginUser",resident);
@@ -62,7 +62,7 @@ public class UserController {
             Residents resident = userService.checkResidentUser(fgPsdUser);
             if(resident != null){
                 m.put("exist","yes");
-                session.setAttribute("cgPswResident",resident);//会话用于获取ID修改密码
+                session.setAttribute("cgPswResident",resident);//创建会话用于获取ID修改密码
             }
             else{
                 m.put("exist","no");
@@ -85,7 +85,7 @@ public class UserController {
         else{
             m.put("changePsw","fail");
         }
-        session.invalidate();//销毁
+        session.invalidate();//销毁会话
         return m;
     }
 }
