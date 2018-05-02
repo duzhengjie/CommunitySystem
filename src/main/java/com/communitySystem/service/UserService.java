@@ -6,7 +6,10 @@ import com.communitySystem.model.User;
 
 public interface UserService {
     User checkUser(User user);
-    boolean changePsw(long id,String password);
+
+    boolean changePsw(long id, String password);
+
     Residents selectResidentUser(long userId);
+
     Residents checkResidentUser(FgPsdUser fgPsdUser);
 }

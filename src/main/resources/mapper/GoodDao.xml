@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 设置为GoodDao接口方法提供sql语句配置 -->
+<mapper namespace="com.communitySystem.dao.good.GoodDao">
+    <resultMap id="topicTypeList" type="com.communitySystem.model.topic.Topic">
+        <id column="topic_id" jdbcType="varchar" property="topicId"></id>
+        <result column="topic_name" jdbcType="varchar" property="topicName"></result>
+        <result column="topic_content" jdbcType="text" property="topicContent"></result>
+        <result column="topic_announcer" jdbcType="varchar" property="topicAnnouncer"></result>
+        <result column="topic_announce_time" jdbcType="date" property="AnnounceTime"></result>
+        <result column="topic_view_count" jdbcType="int" property="viewCount"></result>
+        <result column="topic_topic_praise_num" jdbcType="int" property="topicPraiseNum"></result>
+        <result column="topic_praiser_name" jdbcType="varchar" property="praiserName"></result>
+        <result column="topic_type" jdbcType="varchar" property="topicType"></result>
+    </resultMap>
+
+    <!--插入一条新话题-->
+    <insert id="insertTopic" parameterType="Topic">
+        INSERT * INTO topic VALUE (#{topicId},#{topicName},#{topicContent},#{topicAnnouncer},
+        #{AnnounceTime},#{viewCount},#{topicPraiseNum},#{praiserName},#{topicType})
+    </insert>
+
+    <!--根据话题类型查阅所有该类型话题（以时间为序）-->
+    <select id="queryByTopicType" resultMap="topicTypeList">
+        SELECT * FROM comment WHERE TopicType = #{TopicType} DESC BY #{AnnounceTime} ;
+    </select>
+
+    <!--话题浏览数自增1-->
+    <update id="updateTopicViewCount" parameterType="String">
+        UPDATE topic SET topic_view_count = topic_view_count + 1 WHERE topic_id = #{value}
+    </update>
+
+    <!--更新话题点赞数及点赞人-->
+    <update id="updatePraiser" parameterType="com.communitySystem.model.topic.Topic">
+        UPDATE topic SET
+        topic_topic_praise_num = topic_topic_praise_num + 1,
+        topic_praiser_name = #{topicPraiseNum}
+        WHERE topic_id = #{topicId}
+    </update>
+
+    <!--取消对某个话题的点赞-->
+    <update id="cancelPraiser" parameterType="com.communitySystem.model.topic.Topic">
+        UPDATE topic SET
+        topic_topic_praise_num = topic_topic_praise_num - 1,
+        topic_praiser_name = #{topicPraiseNum}
+        WHERE topic_id = #{topicId}
+    </update>
+</mapper>
