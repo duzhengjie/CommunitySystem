@@ -2,6 +2,9 @@ package com.communitySystem.model.good;
 
 import java.util.Date;
 
+/**
+ *
+ */
 public class GoodInfo
 {
     private String id;
