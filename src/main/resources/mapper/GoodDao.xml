@@ -58,7 +58,7 @@
 
 
     <!--查询物品下的所有评论-->
-    <select id="queryGoodAllComment" resultMap="goodInfo" parameterType="String">
+    <select id="queryGoodAllComment" resultMap="goodComment" parameterType="String">
         SELECT * FROM good_comment WHERE goodcomment_good_id = #{value} DESC BY #{goodcomment_comment_time} ;
     </select>
 
