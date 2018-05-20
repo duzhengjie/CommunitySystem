@@ -1,7 +1,7 @@
 package com.communitySystem.dao;
 
+import com.communitySystem.dao.user.UserDao;
 import com.communitySystem.model.Residents;
-import com.communitySystem.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

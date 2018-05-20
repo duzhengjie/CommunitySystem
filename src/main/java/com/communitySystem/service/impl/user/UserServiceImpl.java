@@ -1,6 +1,6 @@
-package com.communitySystem.service.impl;
+package com.communitySystem.service.impl.user;
 
-import com.communitySystem.dao.UserDao;
+import com.communitySystem.dao.user.UserDao;
 import com.communitySystem.model.FgPsdUser;
 import com.communitySystem.model.Residents;
 import com.communitySystem.model.User;

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 设置为GoodDao接口方法提供sql语句配置 -->
+<mapper namespace="com.communitySystem.dao.good.GoodDao">
+    <resultMap id="goodInfo" type="com.communitySystem.model.good.GoodInfo">
+        <id column="goodinfo_id" jdbcType="varchar" property=""></id>
+        <result column="goodinfo_name" jdbcType="varchar" property="goodName"></result>
+        <result column="goodinfo_category" jdbcType="varchar" property="category"></result>
+        <result column="goodinfo_region" jdbcType="varchar" property="region"></result>
+        <result column="goodinfo_user_id" jdbcType="varchar" property="userId"></result>
+        <result column="goodinfo_user_tel" jdbcType="varchar" property="userTel"></result>
+        <result column="goodinfo_good_image" jdbcType="varchar" property="goodImage"></result>
+        <result column="goodinfo_public_time" jdbcType="date" property="publicTime"></result>
+    </resultMap>
+
+    <resultMap id="goodComment" type="com.communitySystem.model.good.GoodComment">
+        <id column="goodcomment_id" jdbcType="varchar" property="id"></id>
+        <result column="goodcomment_user_id" jdbcType="varchar" property="userId"></result>
+        <result column="goodcomment_good_id" jdbcType="varchar" property="goodId"></result>
+        <result column="goodcomment_comment_content" jdbcType="text" property="commentContent"></result>
+        <result column="goodcomment_comment_time" jdbcType="date" property="commentTime"></result>
+    </resultMap>
+
+    <!--插入一条物品-->
+    <insert id="insertGood" parameterType="GoodInfo">
+        INSERT * INTO good_info VALUE (#{id},#{goodName},#{category},#{region},
+        #{userId},#{userTel},#{goodImage},#{publicTime})
+    </insert>
+
+    <!--首页查询全部物品信息-->
+    <select id="queryAllGoods" resultMap="goodInfo">
+        SELECT * FROM good_info WHERE TopicType = #{TopicType} DESC BY #{AnnounceTime} ;
+    </select>
+
+    <!--查询用户发布的全部物品信息-->
+    <select id="queryUserGoods" resultMap="goodInfo" parameterType="String">
+        SELECT * FROM good_info WHERE goodinfo_user_id = #{value};
+    </select>
+
+    <!--修改物品信息-->
+    <update id="updateGood" parameterType="GoodInfo">
+        UPDATE good_info SET
+        goodinfo_name = #{goodName},
+        goodinfo_category = #{category},
+        goodinfo_region =#{region},
+        goodinfo_user_id =#{userId},
+        goodinfo_user_tel =#{userTel},
+        goodinfo_good_image =#{goodImage},
+        goodinfo_public_time =#{publicTime}
+        WHERE goodinfo_id = #{id}
+    </update>
+
+    <!--删除一条物品信息-->
+    <delete id="deleteGood" parameterType="string">
+        DELETE FROM good_info WHERE good_id = #{value};
+    </delete>
+
+
+    <!--查询物品下的所有评论-->
+    <select id="queryGoodAllComment" resultMap="goodComment" parameterType="String">
+        SELECT * FROM good_comment WHERE goodcomment_good_id = #{value} DESC BY #{goodcomment_comment_time} ;
+    </select>
+
+    <!--评论物品-->
+    <insert id="insertGoodComment" parameterType="GoodComment">
+        INSERT * INTO good_comment VALUE (#{id},#{userId},#{goodId},#{commentContent},
+        #{commentTime},#{userTel},#{goodImage},#{publicTime})
+    </insert>
+
+</mapper>
