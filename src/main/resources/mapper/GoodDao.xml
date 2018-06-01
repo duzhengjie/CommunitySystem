@@ -4,22 +4,22 @@
 <!-- 设置为GoodDao接口方法提供sql语句配置 -->
 <mapper namespace="com.communitySystem.dao.good.GoodDao">
     <resultMap id="goodInfo" type="com.communitySystem.model.good.GoodInfo">
-        <id column="goodinfo_id" jdbcType="varchar" property=""></id>
-        <result column="goodinfo_name" jdbcType="varchar" property="goodName"></result>
-        <result column="goodinfo_category" jdbcType="varchar" property="category"></result>
-        <result column="goodinfo_region" jdbcType="varchar" property="region"></result>
-        <result column="goodinfo_user_id" jdbcType="varchar" property="userId"></result>
-        <result column="goodinfo_user_tel" jdbcType="varchar" property="userTel"></result>
-        <result column="goodinfo_good_image" jdbcType="varchar" property="goodImage"></result>
-        <result column="goodinfo_public_time" jdbcType="date" property="publicTime"></result>
+        <id column="goodinfo_id" jdbcType="VARCHAR" property=""></id>
+        <result column="goodinfo_name" jdbcType="VARCHAR" property="goodName"></result>
+        <result column="goodinfo_category" jdbcType="VARCHAR" property="category"></result>
+        <result column="goodinfo_region" jdbcType="VARCHAR" property="region"></result>
+        <result column="goodinfo_user_id" jdbcType="VARCHAR" property="userId"></result>
+        <result column="goodinfo_user_tel" jdbcType="VARCHAR" property="userTel"></result>
+        <result column="goodinfo_good_image" jdbcType="VARCHAR" property="goodImage"></result>
+        <result column="goodinfo_public_time" jdbcType="DATE" property="publicTime"></result>
     </resultMap>
 
     <resultMap id="goodComment" type="com.communitySystem.model.good.GoodComment">
-        <id column="goodcomment_id" jdbcType="varchar" property="id"></id>
-        <result column="goodcomment_user_id" jdbcType="varchar" property="userId"></result>
-        <result column="goodcomment_good_id" jdbcType="varchar" property="goodId"></result>
-        <result column="goodcomment_comment_content" jdbcType="text" property="commentContent"></result>
-        <result column="goodcomment_comment_time" jdbcType="date" property="commentTime"></result>
+        <id column="goodcomment_id" jdbcType="VARCHAR" property="id"></id>
+        <result column="goodcomment_user_id" jdbcType="VARCHAR" property="userId"></result>
+        <result column="goodcomment_good_id" jdbcType="VARCHAR" property="goodId"></result>
+        <result column="goodcomment_comment_content" jdbcType="VARCHAR" property="commentContent"></result>
+        <result column="goodcomment_comment_time" jdbcType="DATE" property="commentTime"></result>
     </resultMap>
 
     <!--插入一条物品-->

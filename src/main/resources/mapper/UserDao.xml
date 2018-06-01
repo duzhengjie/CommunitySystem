@@ -8,7 +8,7 @@
         SELECT * FROM user WHERE userName=#{userName} and password=#{password}
     </select>
 
-    <select id="selectResidentUser" resultType="Residents" parameterType="long">
+    <select id="selectResidentUser" resultType="Residents" parameterType="String">
         SELECT * FROM residents WHERE id = #{id}
     </select>
 
@@ -18,5 +18,13 @@
 
     <update id="changePsw">
         UPDATE user SET password = #{arg1} WHERE id = #{arg0}
+    </update>
+
+    <select id="checkNickName" parameterType="String" resultType="int">
+        SELECT count(*) FROM residents WHERE nickname=#{nickName};
+    </select>
+
+    <update id="updateNickName">
+        UPDATE residents SET nickname=#{arg0} WHERE id=#{arg1};
     </update>
 </mapper>

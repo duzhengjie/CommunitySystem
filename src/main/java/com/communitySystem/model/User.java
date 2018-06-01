@@ -5,16 +5,16 @@ import java.util.Date;
 用户表 字段(id,userName,password,role)
  */
 public class User {
-   private long id;
+   private String id;
    private String userName;
    private String password;
    private String role;
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

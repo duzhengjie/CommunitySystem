@@ -1,6 +1,7 @@
 package com.communitySystem.service;
 
 import com.communitySystem.model.topic.Topic;
+import com.communitySystem.model.topic.TopicType;
 
 import java.util.List;
 
@@ -8,11 +9,7 @@ public interface TopicService
 {
     boolean insertTopic(Topic topic);
 
-    List<Topic> queryByTopicType(String topicType);
+    List<Topic> queryTopicByTypeId(String topicTypeId);
 
-    boolean updateTopicViewCount(String topicId);
-
-    boolean updatePraiser(Topic topic);
-
-    boolean cancelPraiser(Topic topic);
+    List<TopicType> queryType();
 }

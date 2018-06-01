@@ -1,6 +1,7 @@
 package com.communitySystem.model.topic;
 
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -9,42 +10,28 @@ import java.util.List;
  */
 public class Topic
 {
-    /**
-     * 话题ID
-     */
+
     private String topicId;
-    /**
-     * 话题名
-     */
+
     private String topicName;
-    /**
-     * 话题内容
-     */
+
     private String topicContent;
-    /**
-     * 话题发布者
-     */
+
     private String topicAnnouncer;
-    /**
-     *话题发布时间
-     */
-    private Date AnnounceTime;
-    /**
-     * 被浏览数
-     */
+
+    private Date announceTime;
+
     private int viewCount;
-    /**
-     * 被点赞数量
-     */
+
     private int topicPraiseNum;
-    /**
-     * 点赞人name（以“、”分割的字符串）
-     */
-    private String praiserName;
-    /**
-     * 话题类别
-     */
-    private String topicType;
+
+    private String topicTypeId;
+
+    private String formatTime;
+
+    private String topicPic;
+
+    private List<TopicPic> picList;
 
     public String getTopicId() {
         return topicId;
@@ -79,11 +66,13 @@ public class Topic
     }
 
     public Date getAnnounceTime() {
-        return AnnounceTime;
+        return announceTime;
     }
 
     public void setAnnounceTime(Date announceTime) {
-        AnnounceTime = announceTime;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:SS");
+        formatTime  = sdf.format(announceTime);
+        this.announceTime = announceTime;
     }
 
     public int getViewCount() {
@@ -102,20 +91,47 @@ public class Topic
         this.topicPraiseNum = topicPraiseNum;
     }
 
-    public String getPraiserName() {
-        return praiserName;
+    public String getTopicTypeId() {
+        return topicTypeId;
     }
 
-    public void setPraiserName(String praiserName) {
-        this.praiserName = praiserName;
+    public void setTopicTypeId(String topicTypeId) {
+        this.topicTypeId = topicTypeId;
     }
 
-    public String getTopicType() {
-        return topicType;
+    public String getFormatTime(){
+        return formatTime;
     }
 
-    public void setTopicType(String topicType) {
-        this.topicType = topicType;
+    public List<TopicPic> getPicList() {
+        return picList;
     }
 
+    public void setPicList(List<TopicPic> picList) {
+        this.picList = picList;
+    }
+
+    public String getTopicPic() {
+        return topicPic;
+    }
+
+    public void setTopicPic(String topicPic) {
+        this.topicPic = topicPic;
+    }
+
+    @Override
+    public String toString() {
+        return "Topic{" +
+                "topicId='" + topicId + '\'' +
+                ", topicName='" + topicName + '\'' +
+                ", topicContent='" + topicContent + '\'' +
+                ", topicAnnouncer='" + topicAnnouncer + '\'' +
+                ", announceTime=" + announceTime +
+                ", viewCount=" + viewCount +
+                ", topicPraiseNum=" + topicPraiseNum +
+                ", topicTypeId='" + topicTypeId + '\'' +
+                ", formatTime='" + formatTime + '\'' +
+                ", picList=" + picList +
+                '}';
+    }
 }

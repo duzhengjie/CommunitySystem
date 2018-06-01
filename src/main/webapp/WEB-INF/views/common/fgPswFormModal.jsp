@@ -27,13 +27,13 @@
 						<label for="role"> 身份 </label>
 							<select id="role">
 						  <label>
-							  <option name="role" id="role1" value="住户" selected="selected">住户</option>
+							  <option name="role" id="role1" value="2" selected="selected">住户</option>
 						  </label>
 						  <label>
-							  <option name="role" id="role2" value="物业管理员">物业管理员</option>
+							  <option name="role" id="role2" value="1">物业管理员</option>
 						  </label>
 							<label>
-								<option name="role" id="role3" value="系统管理员">系统管理员</option>
+								<option name="role" id="role3" value="0">系统管理员</option>
 							</label>
 							</select>
 					</div>

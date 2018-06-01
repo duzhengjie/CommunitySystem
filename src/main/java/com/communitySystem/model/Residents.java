@@ -8,12 +8,13 @@ import java.util.Date;
 public class Residents {
     private String name;
     private long age;
-    private long id;
+    private String id;
     private String sex;
     private String registration;
     private Date checkindate;
     private String role;
     private String tel;
+    private String nickname;
 
     public String getName() {
         return name;
@@ -31,11 +32,11 @@ public class Residents {
         this.age = age;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -77,5 +78,13 @@ public class Residents {
 
     public void setTel(String tel) {
         this.tel = tel;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 }

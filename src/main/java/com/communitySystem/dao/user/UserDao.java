@@ -7,9 +7,13 @@ import com.communitySystem.model.User;
 public interface UserDao {
     User checkUser(User user);
 
-    Residents selectResidentUser(long id);
+    Residents selectResidentUser(String id);
 
     Residents checkResidentUser(FgPsdUser fgPsdUser);
 
-    boolean changePsw(long id, String password);
+    boolean changePsw(String id, String password);
+
+    int checkNickName(String nickName);
+
+    boolean updateNickName(String nickName,String id);
 }

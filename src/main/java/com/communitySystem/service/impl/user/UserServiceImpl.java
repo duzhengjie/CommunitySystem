@@ -23,13 +23,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean changePsw(long id, String password) {
+    public boolean changePsw(String id, String password) {
         boolean result = userDao.changePsw(id,password);
         return result;
     }
 
     @Override
-    public Residents selectResidentUser(long userId) {
+    public Residents selectResidentUser(String userId) {
         return this.userDao.selectResidentUser(userId);
     }
 
@@ -39,5 +39,16 @@ public class UserServiceImpl implements UserService {
             return userDao.checkResidentUser(fgPsdUser);
         }
         return null;
+    }
+
+    @Override
+    public int checkNickName(String nickName) {
+        int i = userDao.checkNickName(nickName);
+        return i;
+    }
+
+    @Override
+    public boolean updateNickName(String nickName,String id) {
+        return userDao.updateNickName(nickName,id);
     }
 }

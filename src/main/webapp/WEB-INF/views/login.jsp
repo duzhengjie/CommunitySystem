@@ -1,8 +1,8 @@
 <%@ page import="com.communitySystem.model.Residents" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
-<script src="jquery/jquery-3.3.1.min.js"></script>
-<script src="css/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap/css/bootstrap.min.css">
+<script src="${pageContext.request.contextPath}/jquery/jquery-3.3.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/css/bootstrap/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/function.js"></script>
 <html>
 <head>
@@ -34,9 +34,10 @@
         }
     </style>
 </head>
-<body background="img/timg.jpg">
-<jsp:include page="WEB-INF/views/common/fgPswFormModal.jsp"></jsp:include>
-<jsp:include page="WEB-INF/views/common/cgPswFormModal.jsp"></jsp:include>
+<body background="${pageContext.request.contextPath}/img/timg.jpg">
+<jsp:include page="common/fgPswFormModal.jsp"></jsp:include>
+<jsp:include page="common/cgPswFormModal.jsp"></jsp:include>
+<jsp:include page="common/regNickNameModal.jsp"></jsp:include>
 <script type="text/javascript">
     $(document).ready(
         function () {
@@ -67,9 +68,12 @@
         var userName=$("#userName").val();
         var password=$("#loginForm #password").val();
         // alert("userName:"+userName+"  password:"+password);
-        $.post(getContextPath()+"/user/userLogin.do",{userName:userName,password:password},function (result) {
+        $.post(getContextPath()+"/user/userLogin",{userName:userName,password:password},function (result) {
             if(result.login=="success"){
                 location.href=getContextPath()+"/index";
+            }
+            else if(result.login=="firstLogin"){
+                $("#regNickNameFormModal").modal();
             }
             else{
                 alert("用户名或密码错误！请重试!");
@@ -83,7 +87,7 @@
         var tel = $("#fgPswForm #tel").val();
         var role = $("#fgPswForm #role").val();
         // alert("name:"+name+"identity:"+identity+"tel:"+tel+"role:"+role);
-        $.post(getContextPath()+"/user/checkFgPswUser.do",{name:name, identity:identity, tel:tel, role:role},function (result) {
+        $.post(getContextPath()+"/user/checkFgPswUser",{name:name, identity:identity, tel:tel, role:role},function (result) {
               if(result.exist == "yes"){
                   $("#fgPswFormModal").modal('hide');
                   // $("#cgPswForm #id").html(result.identity);
@@ -99,7 +103,7 @@
     function changePsw() {
         var password1 = $("#cgPswForm #password1").val();
         // alert("id:"+id+" password1:"+password1+" password2:"+password2);
-            $.post(getContextPath() + "/user/userChangePsw.do",{password:password1},function (result) {
+            $.post(getContextPath() + "/user/userChangePsw",{password:password1},function (result) {
                 if(result.changePsw == "success"){
                     alert("修改成功！");
                     $("#cgPswFormModal").modal('hide');
@@ -108,6 +112,18 @@
                     alert("修改失败！");
                 }
             })
+    }
+    //新住户取昵称
+    function regNickName(){
+        var nickName = $("#regNickNameForm #nickName").val();
+        $.post(getContextPath() + "/user/userRegNickName",{nickName:nickName},function (result) {
+            if(result.reg == "success"){
+                location.href=getContextPath()+"/index";
+            }
+            else{
+                alert("昵称已存在！");
+            }
+        })
     }
 </script>
 <form id="loginForm" method="post">
