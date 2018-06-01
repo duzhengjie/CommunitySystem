@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="CommunitySystem:war">
-    <output-path>$PROJECT_DIR$/../CommunitySystem/target</output-path>
-    <root id="archive" name="CommunitySystem.war">
-      <element id="artifact" artifact-name="CommunitySystem:war exploded" />
-    </root>
-  </artifact>
-</component>
