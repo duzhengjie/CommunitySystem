@@ -4,20 +4,26 @@
 <!-- 设置为IUserDao接口方法提供sql语句配置 -->
 <mapper namespace="com.communitySystem.dao.topic.CommentDao">
 
-    <insert id="insertComment" parameterType="Comment">
-        INSERT * INTO comment VALUE (#{topicId},#{commentId},#{commentContent},#{commentBy},
-        #{replyBy},#{commentTime},#{commentPraiseNum})
+
+
+    <select id="findAllComment" resultType="Comment">
+        select id commentId,comment_content commentContent,comment_time commentTime,comment_zan commentZan from comment
+    </select>
+    <select id="findc" resultType="Comment">
+        select id commentId,comment_content commentContent,comment_time commentTime,comment_zan commentZan from comment
+    </select>
+    <insert id="addComment" parameterType="Comment">
+        insert into comment
+        values(null,#{commentContent},#{commentTime},0)
     </insert>
 
-    <delete id="deleteByCommentBy" parameterType="String">
-        DELETE * FROM comment WHERE commentBy = #{commentBy};
-    </delete>
+    <select id="findReply" resultType="Reply">
+        select id replyId,reply_content replyContent,reply_time replyTime,comment_id commentId from reply
 
-    <delete id="deleteByReplyByAndCommentBy" parameterType="String">
-        DELETE * FROM comment WHERE replyBy = #{replyBy} and commentBy = #{commentBy};
-    </delete>
-
-    <select id="queryByCommentId" resultType="Comment">
-        SELECT * FROM comment WHERE commentId = #{commentId};
     </select>
+    <insert id="addReply" parameterType="Reply">
+        insert into reply
+        values(null,#{replyContent},#{replyTime},#{commentId})
+    </insert>
+
 </mapper>

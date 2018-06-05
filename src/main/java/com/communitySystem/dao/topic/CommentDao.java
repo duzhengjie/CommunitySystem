@@ -1,6 +1,10 @@
 package com.communitySystem.dao.topic;
 
-import com.communitySystem.model.topic.Comment;
+import com.communitySystem.model.Comment;
+import com.communitySystem.model.Reply;
+import com.communitySystem.util.Page;
+
+import java.util.List;
 
 public interface CommentDao {
     /**
@@ -34,4 +38,17 @@ public interface CommentDao {
      * @return
      */
     Comment queryByCommentId(String commentId);
+
+
+    List<Comment> findc();
+
+    List<Comment> findAllComment();
+
+    int addComment(Comment comment);
+
+    List<Reply> findReply();
+
+    int addReply(Reply reply);
+
+
 }
